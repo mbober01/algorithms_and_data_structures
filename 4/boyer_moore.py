@@ -1,15 +1,15 @@
-def algorytm_boyer_moore(word, wzorzec):
-    l = len(wzorzec)
+def algorytm_boyer_moore(word, pattern):
+    l = len(pattern)
     j = l - 1
     i = j
-    p = {k:l-wzorzec[::-1].index(k)-1 for k in wzorzec}
+    p = {k:l-pattern[::-1].index(k)-1 for k in pattern}
     where = []
     while i < len(word):
-        if word[i] == wzorzec[j]:
+        if word[i] == pattern[j]:
             i -= 1
             j -= 1
         else:
-            if word[i] in wzorzec:
+            if word[i] in pattern:
                 i = i + l - min(j,1+p[word[i]] )
             else:
                 i = i + l

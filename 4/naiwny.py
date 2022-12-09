@@ -1,5 +1,5 @@
-def algorytm_naiwny(word, wzorzec):
-    l = len(wzorzec)
+def algorytm_naiwny(word, pattern):
+    l = len(pattern)
     if l > len(word):
         return False
     index = 0
@@ -8,7 +8,7 @@ def algorytm_naiwny(word, wzorzec):
         index = 0
         is_in = True
         for j in range(i, l+i):
-            if word[j] == wzorzec[index]:
+            if word[j] == pattern[index]:
                 index += 1
                 continue
             is_in = False
