@@ -69,7 +69,7 @@ def encode_text(text, codes):
 
 
 alphabet = ['a','b','c','d','e','f','g','h']
-probabilities = [0.01,0.32,0.05,0.05,0.09,0.1,0.15,0.23]
+probabilities = [0.01,0.32,0.04,0.06,0.09,0.1,0.15,0.23]
 codes = get_code(alphabet,probabilities)
 print(codes)
 text = "gadac"
