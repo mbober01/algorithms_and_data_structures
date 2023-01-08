@@ -26,9 +26,23 @@ def heap_sort(array):
     for i in range(len(array)-1,1,-1):
         array[i], array[1] = array[1], array[i]
         heapify(array,i,1)
-
-numbers = [randint(-100000000,100000000) for _ in range(1000000)]
-numbers.insert(0,None)
-start_time = time()
-heap_sort(numbers[1:])
-print(time() - start_time)
+        
+        
+def stats():
+    run_times_small = []
+    run_times_big = []
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(100)]
+        start_time = time()
+        numbers.insert(0,None)
+        heap_sort(numbers[1:])
+        run_times_small.append(time()-start_time)
+        
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(10000)]
+        start_time = time()
+        numbers.insert(0,None)
+        heap_sort(numbers[1:])
+        run_times_big.append(time()-start_time)
+    
+    return run_times_small,run_times_big

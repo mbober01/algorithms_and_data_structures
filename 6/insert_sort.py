@@ -12,6 +12,18 @@ def insert_sort(numbers):
     run_time = time() - start_time
     return numbers, run_time
 
-numbers = [randint(1,100) for x in range(100000)]
-numbers, run_time = insert_sort(numbers)
-print(run_time)
+
+def stats():
+    run_times_small = []
+    run_times_big = []
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(100)]
+        numbers, run_time = insert_sort(numbers)
+        run_times_small.append(run_time)
+
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(10000)]
+        numbers, run_time = insert_sort(numbers)
+        run_times_big.append(run_time)
+        
+    return run_times_small,run_times_big

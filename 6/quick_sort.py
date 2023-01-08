@@ -20,7 +20,21 @@ def quick_sort(array, start, end):
         quick_sort(array, start, i - 1)
         quick_sort(array, i+1, end)
 
-numbers = [randint(-1000000,10000000) for _ in range(1000000)]
-start_time = time()
-quick_sort(numbers, 0, len(numbers)-1)
-print(time() - start_time)
+
+def stats():
+    run_times_small = []
+    run_times_big = []
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(100)]
+        start_time = time()
+        quick_sort(numbers,0,len(numbers)-1)
+        run_times_small.append(time()-start_time)
+
+    for _ in range(5):
+        numbers = [randint(0,100000000) for x in range(10000)]
+        start_time = time()
+        quick_sort(numbers,0,len(numbers)-1)
+        run_times_big.append(time()-start_time)
+
+    return run_times_small,run_times_big
+
