@@ -2,11 +2,11 @@ from time import time
 from random import randint
 
 def bubble_sort(numbers):
-    status = True
+    status = False
     start_time = time()
     n = len(numbers)
     for j in range(n):
-        for i in range(1,n-j-1):
+        for i in range(1,n-j):
             if numbers[i] < numbers[i-1]:
                 numbers[i],numbers[i-1] = numbers[i-1],numbers[i]
                 status = True
