@@ -37,4 +37,3 @@ def stats():
         run_times_big.append(time()-start_time)
 
     return run_times_small,run_times_big
-

@@ -31,4 +31,4 @@ def algorytm_karp_rabin(word, pattern):
     return False
 
 
-print(algorytm_karp_rabin("abacdcbdacd", "acdc"))
+print(algorytm_karp_rabin("kot schowal sie za kotara", "kot"))
